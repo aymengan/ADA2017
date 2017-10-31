@@ -18,7 +18,8 @@ What motivates us the most is the opportunity that we have to get deep insights 
 
 # Dataset
 List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show us you've read the docs and some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
-As mentioned before, we will mostly use [DBLP-Citation-network V10](https://static.aminer.org/lab-datasets/citation/dblp.v10.zip) to get over 3 millions papers published between 2010 and 2017. The dataset contains files in JSON-format for each 1 million paper. Each entry in the file has the following structure  
+As mentioned before, we will mostly use [DBLP-Citation-network V10](https://static.aminer.org/lab-datasets/citation/dblp.v10.zip) to get over 3 millions papers published between 2010 and 2017. Please find more details on the dataset [here](https://aminer.org/citation).  
+The dataset contains files in JSON-format for each 1 million paper. Each entry in the file has the following structure:  
 
 | Field Name | Field Type      | Description       | Example                                                                                                                                                           |
 |------------|-----------------|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -28,15 +29,15 @@ As mentioned before, we will mostly use [DBLP-Citation-network V10](https://stat
 | venue      | string          | paper venue       | Journal of Computational Chemistry                                                                                                                                |
 | year       | int             | published year    | 2017                                                                                                                                                              |
 | references | list of strings | citing papers' ID | ["4f4f200c-0764-4fef-9718-b8bccf303dba", "aa699fbf-fabe-40e4-bd68-46eaf333f7b1"]                                                                                  |
-| abstract   | string          | abstract          | This paper studies ...                                                                                                                                            |
+| abstract   | string          | abstract          | This paper studies ...                                                                                                                                            |  
 
-
+We would like to enrich the initial dataset by adding valuable informations on the authors, such as, the affiliated university at the time of the publication. For this aim we will use at a first stage the [DBLP API](http://dblp.uni-trier.de/faq/How+to+use+the+dblp+search+API.html) to search for the affliation component of an author, which is not available for all authors. Therefore we would use other APIs such as [Elsevier Search API](https://dev.elsevier.com/api_docs.html), which can complete the missing affiliation information. 
 
 # A list of internal milestones up until project milestone 2
-Here is a list of internal tasks until the subsequent project milestone.  
-*  Data collection: try to add useful informations about the authors such as affiliated university
-*  Data cleaning: complete missing informations as much as possible
-*  Data understanding: deepen our perception of the data and check for possible correlations
+Here is a list of internal tasks until the subsequent project milestone:  
+*  Data collection: try to add useful informations about the authors such as affiliated university.
+*  Data cleaning: complete missing informations as much as possible.
+*  Data understanding: deepen our perception of the data and check for possible correlations.
 
 # Questions for TAa
 * Is it possible to use a ready python-module such as scholar.py to extract additional informations from Google Scholar about authors?
