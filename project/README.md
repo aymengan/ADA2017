@@ -11,16 +11,17 @@ What motivate us the most is the opportunity that we have to get deep insights o
 * What are the most cited authors ?
 * Which journal has the most papers ?
 * In how many journals do authors publish averagely? 
-* Determine the number of collaboration between two authors ?
+* Determine the number of collaborations between two authors ?
 * Analyze author affliation(university)?
 
 # Dataset
 List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show us you've read the docs and some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
 
 # A list of internal milestones up until project milestone 2
-Add here a sketch of your planning for the next project milestone.  
+Here is a list of internal tasks until the subsequent project milestone.  
 *  Data collection: try to add useful informations about the authors such as affliated university
-*  Data cleaning: 
+*  Data cleaning: complete missing informations as much possible
+*  Data understanding: deepen our perception of the data and check for possible correlations
 
 # Questions for TAa
 * Is it possible to use a ready python-module such as scholar.py to extract additional informations from Google Scholar about authors?
