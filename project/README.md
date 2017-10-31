@@ -11,8 +11,8 @@ List the dataset(s) you want to use, and some ideas on how do you expect to get,
 
 # A list of internal milestones up until project milestone 2
 Add here a sketch of your planning for the next project milestone.  
-..*  Data cleaning: collect the data and clean it from any impurity(wrong/missing value)  
-..*  
+*  Data cleaning: collect the data and clean it from any impurity(wrong/missing value)  
+*  
 
 # Questions for TAa
 Add here some questions you have for us, in general or project-specific.
