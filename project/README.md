@@ -2,21 +2,21 @@
 
 # Abstract  
 
-Our prject consists of analyzing the scene of computer science publications, its main journals and influential authors.  
-The dataset that will be used is the [citation network dataset](https://aminer.org/citation), which contains citation data that is extracted from DBLP and ACM. We especially target the [DBLP-Citation-network V10](https://aminer.org/citation) that include 3,079,007 papers and 25,166,994 citation relationships until October 2017 in a JSON-format.  
-Through this work, we aim to highlight the major actors of the scientific publications scene over time and show the different social interactions within the network. Moreover, we want to inspect the tendency of co-authoring again with previous collaborators in order to learn more about the collaboration behavior of researchers such as the capacity of an author to collaborate with other colleagues that are new to the research field.  
-What motivates us the most is the opportunity that we have to get deep insights on the publications in the computer science field and to see if clichés like needed connections to co-author with well-recognized researchers still hold in the course of the project.   
+Our prject consists of analyzing the scene of computer science publications and the different interactions within its main communities. The dataset that will be used is the [citation network dataset](https://aminer.org/citation), which contains citation data that is extracted from DBLP(the Digital Bibliography & Library Project). We especially target the [DBLP-Citation-network V10](https://aminer.org/citation) that include 3,079,007 papers and 25,166,994 citation relationships of papers that were published until October 2017 in a JSON-format.  
+    
+Through this work, we aim to detect the major communities in the scientific publications scene and predict the next collaborations that may happen between the authors in the future. Moreover, we want to uncover the major influencers of the scene by computing some centrality measures such as betweenness-centrality and by applying algorithms like Page-Rank or HITS. Since the dataset does not provide any information about the content of a paper except its abstract and title, we want to use some text mining techniques to extract the key words of each paper and then apply clustering algorithms to cluster the authors based on these. An important question to pose here, is whether the obtained clusters match the existing communities in the network. Depending on the graph topology, a more far-reaching challenge that can be tackled, is the ability to classify newcomers by position(Professor, Post-doc, PhD) through the knowledge that we can get on the actual positions of the authors in the network. However this requires an extension of the initial dataset with additional informations such as the actual position or affliation of a certain author.  
+    
+What motivates us the most is the opportunity that we have to get deep insights on the publications in the computer science field and to  discover the present communities in order to unreveal potential concealed patterns. Given the interesting results that we can get, our project might ba a good attraction for the visitors of the Applied Machine Learning Days.
 
 
 # Research questions  
 
-* What are the most cited authors ?
-* Which journal has the most papers ?
-* In how many journals do authors publish averagely? 
-* Determine the number of collaborations between two authors ?
-* What is the author affiliation(university)?
-* How does the network of publications look like ?
-* Is the network marked by the presence of hubs or cliques ?
+* Can a collaboration take place between two specific authors?  
+* What are the communities of the DBLP network?  
+* Is a certain author a professor?
+* What are the key words of a certain paper?
+* What are the clusters of the network based on the key words?  
+* What is the position of a new author in the network?  
 
 # Dataset  
 
@@ -25,7 +25,7 @@ The dataset has a "manageable" size of 1.7Gb and contains files in JSON-format f
 
 | Field Name | Field Type      | Description       | Example                                                                                                                                                           |
 |------------|-----------------|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id         | string          | paper             | ID013ea675-bb58-42f8-a423-f5534546b2b1                                                                                                                            |
+| id         | string          | paper ID             | 013ea675-bb58-42f8-a423-f5534546b2b1                                                                                                                            |
 | title      | string          | paper title       | Prediction of consensus binding mode geometries for related chemical series of positive allosteric modulators of adenosine and muscarinic acetylcholine receptors |
 | authors    | list of strings | paper authors     | ["Leon A. Sakkal", "Kyle Z. Rajkowski", "Roger S. Armen"]                                                                                                         |
 | venue      | string          | paper venue       | Journal of Computational Chemistry                                                                                                                                |
@@ -33,18 +33,19 @@ The dataset has a "manageable" size of 1.7Gb and contains files in JSON-format f
 | references | list of strings | citing papers' ID | ["4f4f200c-0764-4fef-9718-b8bccf303dba", "aa699fbf-fabe-40e4-bd68-46eaf333f7b1"]                                                                                  |
 | abstract   | string          | abstract          | This paper studies ...                                                                                                                                            |  
 
-We would like to enrich the initial dataset by adding valuable informations on the authors, such as, the affiliated university at the time of the publication. For this aim, we will use at a first stage the [DBLP API](http://dblp.uni-trier.de/faq/How+to+use+the+dblp+search+API.html) to search for the affliation component of an author, which is not available for all authors. Therefore we would use other APIs such as [Elsevier Search API](https://dev.elsevier.com/api_docs.html), which can complete the missing affiliation information. 
+We would like to enrich the initial dataset by adding valuable informations on the authors, such as, the affiliated university at the time of the publication. For this aim, we will use at a first stage the [DBLP API](http://dblp.uni-trier.de/faq/How+to+use+the+dblp+search+API.html) to search for the affliation component of an author, which is not available for all authors. Therefore we would use other APIs such as [Elsevier Search API](https://dev.elsevier.com/api_docs.html), which can complete the missing affiliation information. Since our computers have a limited computational power, we would like to use the cluster by firstly uploading the dataset and then by using a Spark library named Graphx, which offers a wide range of functions that can be used for the sake of the project.
 
 # A list of internal milestones up until project milestone 2  
 
 Here is a list of internal tasks until the subsequent project milestone:  
-*  Data collection: try to add useful informations about the authors such as affiliated university.
+*  Data collection: try to add useful informations about the authors such as affiliated university and position.
 *  Data cleaning: complete missing informations as much as possible.
 *  Data understanding: deepen our perception of the data and check for possible correlations.
+*  Getting started with the cluster: upload the dataset and try the first Spark job with Graphx
 
 # Questions for TAa  
 
-* Have already experienced such data analysis on computer science publications? If yes, what are your recommendations?
-* Do you have concerns on the data size of 1.7Gb ?  
+* Regarding your experience, do you have any suggestions or recommendations for our project?  
+* Is the scope of the project too broad? or do you think that it is well manageable?
 
 We are looking forward for your feedback :)
