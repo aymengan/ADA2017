@@ -49,7 +49,12 @@ Here is a list of internal tasks until the subsequent project milestone:
 *  Complete the graph analysis by computing basic graph measures(Degree Distributions, Clustering Coefficient) and centrality measure(Betweenness Centrality, Page-Rank/HITS).
 *  Find the communities in both netwokrs(publications and authors).
 *  Extract the keywords of the papers and then apply clustering algorithms based on these
-Match the found communities with the clusters.(Out of scope!)
+Match the found communities with the clusters.(Out of scope!)  
+
+# Work contributions  
+*  Aymen: Web scraping, XML parsing, Data cleaning, Report submission, (!will work on the presentation)  
+*  Khalil: Network analysis, Cluste usage, Machine learning algorithms
+*  Nour: Web scraping, Data visualization, Final jupyter submission  
 
 # Acknowledgements  
 We want to thank Mr. Tiziano Piccardi for his great support in the course of the project. Thanks a lot ! :)
